@@ -1,0 +1,12 @@
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+}
+
+span {
+    color: #ef233c;
+}

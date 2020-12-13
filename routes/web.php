@@ -23,5 +23,8 @@ Route::get('/', function () {
 });
 */
 //Route::get('/lista', [ClienteListaController::class, 'mostrarLista']);
-//Route::post('/lista', [ClienteListaController::class, 'buscarNombre']);
-Route::resource('/lista', ClienteController::class)->only(['index']);
+//Route::get('/lista', [ClienteListaController::class, 'show']);
+//Route::resource('/lista', ClienteController::class)->only(['index']);
+Route::resource('/lista', ClienteController::class)->only(['index', 'show']);
+//Route::get('/lista', [ClienteController::class, 'index']);
+//Route::get('/lista/{buscarNombre}', [ClienteController::class, 'show']);

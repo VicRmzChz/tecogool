@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\Quinela;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 
 class ClienteController extends Controller
@@ -19,8 +21,15 @@ class ClienteController extends Controller
      */
     public function index()
     {
-      $listas = Cliente::get();
-      return view('pages.lista', compact('listas'));
+      /*$clientes = \DB::table('clientes')
+      ->leftJoin('quinelas', 'quinelas.cliente_id', '=', 'clientes.id')
+      ->leftJoin('cliente_puntos', 'cliente_puntos.cliente_id', '=', 'clientes.id')
+      ->select('clientes.*', 'quinelas.*', 'cliente_puntos.puntos')
+      ->paginate(2);*/
+      $clientes = Cliente::with('todasLasQuinelas')->paginate(2);
+      
+      return view('pages.lista', compact('clientes'))
+      ->with('i', (request()->input('page', 1) - 1) * 3);
     }
 
     /**
@@ -50,11 +59,15 @@ class ClienteController extends Controller
      * @param  \App\Models\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function show(Cliente $cliente)
+    public function show(request $req)
     {
-        //
-        $cliente = Cliente::findOrFail($id);
-        return view('clientes.show', compact('cliente'));
+      
+      $clientes = Cliente::with('todasLasQuinelas')
+      ->where('primer_nombre', 'LIKE', $req->buscarNombre)->paginate(1);
+      
+      return view('pages.lista', compact('clientes'))
+      ->with('i', (request()->input('page', 1) - 1) * 3);
+      
     }
 
     /**

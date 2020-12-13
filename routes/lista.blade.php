@@ -57,6 +57,7 @@
     @endforeach
   </table>
 </div>
+
 <div class="d-flex justify-content-center">
   {{$clientes->links()}}
 </div>
