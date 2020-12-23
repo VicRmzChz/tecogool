@@ -7,7 +7,7 @@
 <div class="container">
   <form method="GET" action="{{ route('lista.show', 'buscarNombre') }}">
     <div class="input-group pb-3">
-      <input type="text" class="form-control" placeholder="Buscar nombre" aria-label="Buscar nombre"
+      <input type="text" id="buscarNombre" class="form-control" placeholder="Buscar nombre" aria-label="Buscar nombre"
         aria-describedby="button-addon2" name="buscarNombre">
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
@@ -38,10 +38,12 @@
     </thead> <!-- End Table header -->
 
     <tbody>
+
       @foreach($clientes as $cliente)
       @foreach($cliente->todasLasQuinelas as $quinela)
       <tr>
-        <th scope="row">{{ ++$i }}</th>
+
+        <th scope="row">{{ $quinela->id }}</th>
         <td class="text-left">
           {{$cliente->primer_nombre . ' ' . $cliente->segundo_nombre . ' ' . $cliente->apellido_paterno . ' ' . $cliente->apellido_materno}}
         </td>

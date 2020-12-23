@@ -28,8 +28,8 @@ class ClienteController extends Controller
       ->paginate(2);*/
       $clientes = Cliente::with('todasLasQuinelas')->paginate(2);
       
-      return view('pages.lista', compact('clientes'))
-      ->with('i', (request()->input('page', 1) - 1) * 3);
+      return view('pages.lista', compact('clientes'));
+      //->with('i', (request()->input('page', 1) - 1) * 3);
     }
 
     /**
@@ -61,12 +61,24 @@ class ClienteController extends Controller
      */
     public function show(request $req)
     {
-      
       $clientes = Cliente::with('todasLasQuinelas')
-      ->where('primer_nombre', 'LIKE', $req->buscarNombre)->paginate(1);
+      ->where('primer_nombre', 'LIKE', '%' . $req->buscarNombre . '%')
+      ->orWhere('segundo_nombre', 'LIKE', '%'. $req->buscarNombre . '%')
+      ->orWhere('apellido_paterno', 'LIKE', '%'. $req->buscarNombre . '%')
+      ->orWhere('apellido_materno', 'LIKE', '%'. $req->buscarNombre . '%')
+      ->paginate(1);
+      return view('/pages.lista', compact('clientes'));
+      /*if(!empty($clientes)){
+        
+      }
+      else{
+        
+      }
+      */
       
-      return view('pages.lista', compact('clientes'))
-      ->with('i', (request()->input('page', 1) - 1) * 3);
+      
+      /*return view('pages.lista', compact('clientes'))
+      ->with('i', (request()->input('page', 1) - 1) * 3);*/
       
     }
 
