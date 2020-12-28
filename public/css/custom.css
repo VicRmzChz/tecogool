@@ -46,22 +46,31 @@ span {
 }
 
 /* */
-@media only screen and (max-width: 576px) {
+
+@media only screen and (min-width: 359px) {
     #tecoSize {
         font-size: 3.5rem;
-        padding-top: 45%;
+        padding-top: 50%;
     }
 }
 
-@media only screen and (min-width: 721px) {
+@media only screen and (min-width: 768px) {
     #tecoSize {
-        /*font-size: 3.5rem;*/
+        font-size: 6rem;
+        padding-top: 25%;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    #tecoSize {
+        font-size: 6rem;
         padding-top: 15%;
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1920px) {
     #tecoSize {
-        padding-top: 25%;
+        font-size: 6rem;
+        padding-top: 30%;
     }
 }
