@@ -8,11 +8,12 @@
   <form method="GET" action="{{ route('lista.show', 'buscarNombre') }}">
     <div class="input-group pb-3">
       <input type="text" id="buscarNombre" class="form-control" placeholder="Buscar nombre" aria-label="Buscar nombre"
-        aria-describedby="button-addon2" name="buscarNombre">
+        aria-describedby="button-addon2" name="buscarNombre" required>
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
       </div>
     </div>
+    <span>@error('buscarNombre'){{ $message }}@enderror</span>
   </form>
 </div> <!-- End Buscar Jugador -->
 
