@@ -1,0 +1,77 @@
+.login-form {
+    width: 100%;
+    font-size: 15px;
+    height: 100vh;
+    background-color: #6930c3;
+}
+.login-form form {
+    border-radius: 2%;
+
+    width: 370px;
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 1px 2px 20px 3px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.login-form h2 {
+    margin: 0 0 15px;
+}
+.form-control,
+.btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.btn {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.form_horizontal .form-group {
+    margin: 0 0 10px;
+    position: relative;
+}
+.form_horizontal .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 30%;
+    transform: translate(-50%);
+    font-size: 13px;
+    color: #777;
+}
+
+.form_horizontal .form-control {
+    color: #555;
+    background-color: #fff;
+    font-size: 13px;
+    letter-spacing: 1px;
+    height: 37px;
+    padding: 2px 15px 2px 35px;
+    border: none;
+    border-radius: 50px;
+}
+
+.form_horizontal .form-control::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.form_horizontal {
+    text-align: center;
+}
+.form_horizontal .form_icon {
+    font-size: 100px;
+    line-height: 85px;
+    margin: 0 0 13px;
+}
+
+@media only screen and (max-width: 576px) {
+    .login-form form {
+        width: 300px;
+    }
+}
