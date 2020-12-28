@@ -8,6 +8,7 @@
 
 
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link href="{{ asset('../css/master.css') }}" rel="stylesheet" />
@@ -42,7 +43,7 @@
         </ul>
         <ul class="nav navbar-nav mr">
           <li><a class="nav-link" href="#">Sign Up <i class="fa fa-user-plus"></i></a></li>
-          <li><a class="nav-link" href="#">Login <i class="fa fa-user"></i></a></li>
+          <li><a class="nav-link" href="/login">Login <i class="fa fa-user"></i></a></li>
         </ul>
       </div>
     </div>
@@ -53,13 +54,15 @@
 
 
 
-  <script src="https://kit.fontawesome.com/527dae40e0.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/527dae40e0.js" crossorigin="anonymous">
+  </script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
   </script>
+
 </body>
 
 </html>
