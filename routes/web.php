@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteListaController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\UserAuth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,5 +27,12 @@ Route::get('/', function () {
 //Route::get('/lista', [ClienteListaController::class, 'show']);
 //Route::resource('/lista', ClienteController::class)->only(['index']);
 Route::resource('/lista', ClienteController::class)->only(['index', 'show']);
-//Route::get('/lista', [ClienteController::class, 'index']);
-//Route::get('/lista/{buscarNombre}', [ClienteController::class, 'show']);
+
+
+//Route::view('profile', 'pages/profile');
+Route::get('login', [UserAuth::class, 'userIsLogin']);
+Route::post('user', [UserAuth::class, 'userLogin']);
+
+Route::get('profile', [UserAuth::class, 'profile']);
+
+Route::get('logout', [UserAuth::class, 'userIsLogout']);
