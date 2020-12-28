@@ -61,20 +61,19 @@ class ClienteController extends Controller
      */
     public function show(request $req)
     {
+      // Validate that it must have text
+      $req->validate([
+        'buscarNombre' => 'required|max:255',
+      ]);
+
+
       $clientes = Cliente::with('todasLasQuinelas')
-      ->where('primer_nombre', 'LIKE', '%' . $req->buscarNombre . '%')
-      ->orWhere('segundo_nombre', 'LIKE', '%'. $req->buscarNombre . '%')
-      ->orWhere('apellido_paterno', 'LIKE', '%'. $req->buscarNombre . '%')
-      ->orWhere('apellido_materno', 'LIKE', '%'. $req->buscarNombre . '%')
-      ->paginate(1);
-      return view('/pages.lista', compact('clientes'));
-      /*if(!empty($clientes)){
-        
-      }
-      else{
-        
-      }
-      */
+        ->where('primer_nombre', 'LIKE', '%' . $req->buscarNombre . '%')
+        ->orWhere('segundo_nombre', 'LIKE', '%'. $req->buscarNombre . '%')
+        ->orWhere('apellido_paterno', 'LIKE', '%'. $req->buscarNombre . '%')
+        ->orWhere('apellido_materno', 'LIKE', '%'. $req->buscarNombre . '%')
+        ->paginate(1);
+        return view('/pages.lista', compact('clientes'));
       
       
       /*return view('pages.lista', compact('clientes'))
