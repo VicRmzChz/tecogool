@@ -11,7 +11,7 @@
     <h2 class="text-center">Log in</h2>
     <div class="form-group">
       <span class="input-icon"><i class="fa fa-user"></i></span>
-      <input type="text" class="form-control" placeholder="Username" name="username" required="required">
+      <input type="text" class="form-control" placeholder="Username" name="username" id="username" required="required">
     </div>
     <div class="form-group">
       <span class="input-icon"><i class="fa fa-lock"></i></span>
