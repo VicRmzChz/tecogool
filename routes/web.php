@@ -33,6 +33,6 @@ Route::resource('/lista', ClienteController::class)->only(['index', 'show']);
 Route::get('login', [UserAuth::class, 'userIsLogin']);
 Route::post('user', [UserAuth::class, 'userLogin']);
 
-Route::get('profile', [UserAuth::class, 'profile']);
+Route::get('dashboard', [UserAuth::class, 'dashboard']);
 
 Route::get('logout', [UserAuth::class, 'userIsLogout']);
