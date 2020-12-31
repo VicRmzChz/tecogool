@@ -42,11 +42,18 @@
           </li>
         </ul>
         <ul class="nav navbar-nav mr">
+
+          @if(session('username'))
+          <li><a class="nav-link" href="/dashboard">Dashboard <i class="fa fa-tachometer"></i></a></li>
+          <li><a class="nav-link" href="/logout">Logout <i class="fa fa-user"></i></a></li>
+          @else
           <li><a class="nav-link" href="#">Sign Up <i class="fa fa-user-plus"></i></a></li>
           <li><a class="nav-link" href="/login">Login <i class="fa fa-user"></i></a></li>
+          @endif
         </ul>
       </div>
     </div>
+
   </nav>
   <!-- End Navbar -->
 
