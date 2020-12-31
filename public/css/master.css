@@ -7,6 +7,60 @@
     text-transform: uppercase;
 }
 
-span {
+.navbar-brand span {
     color: #ef233c;
+}
+
+.maincontent {
+    height: 100vh;
+    width: 100%;
+    background-image: url("../images/soccerfiel.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.maincontent .info {
+    margin-top: 25%;
+    transform: translateY(-25%);
+}
+
+.maincontent .info h1 {
+    font-size: 5em;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.maincontent .info p {
+    font-size: 2em;
+    font-weight: 500;
+    color: #aaa;
+    letter-spacing: 2px;
+}
+
+.maincontent .info a {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    background-color: #e91d43;
+    padding: 5px 15px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.maincontent .info a:hover {
+    background-color: #6930c3;
+}
+
+@media only screen and (max-width: 360px) {
+    .maincontent .info {
+        margin-top: 100%;
+        transform: translateY(-50%);
+    }
+    .maincontent .info h1 {
+        font-size: 3.5em;
+    }
 }
