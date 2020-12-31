@@ -10,7 +10,7 @@ class UserAuth extends Controller
     {
       $data = $req->input();
       $req->session()->put('username', $data['username']);
-      return redirect('profile');
+      return redirect('dashboard');
     }
 
     // Login
@@ -18,7 +18,7 @@ class UserAuth extends Controller
     {
       if(session()->has('username'))
       {
-        return redirect('profile');
+        return redirect('dashboard');
       }
       else
       {
@@ -28,11 +28,11 @@ class UserAuth extends Controller
     }
 
     // Profile
-    public function profile()
+    public function dashboard()
     {
       if (session()->has('username')) 
       {
-        return view('pages/profile');
+        return view('pages/dashboard');
       }
       else
       {
