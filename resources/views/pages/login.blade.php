@@ -23,9 +23,9 @@
     <div class="clearfix">
       <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
       <a href="#" class="float-right">Forgot Password?</a>
+      <p class="text-center"><a class="float-right" href="#">Create an Account</a></p>
     </div>
   </form>
-  <p class="text-center"><a href="#">Create an Account</a></p>
 </div>
 
 
