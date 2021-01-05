@@ -19,6 +19,7 @@ class UserAuth extends Controller
       if(session()->has('username'))
       {
         return redirect('dashboard');
+        
       }
       else
       {
@@ -27,10 +28,10 @@ class UserAuth extends Controller
       
     }
 
-    // Profile
+    
     public function dashboard()
     {
-      if (session()->has('username')) 
+      if(session()->has('username')) 
       {
         return view('pages/dashboard');
       }
