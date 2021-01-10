@@ -25,15 +25,11 @@
       <tr class="text-center text-white">
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Cruz Azul <br> America</th>
-        <th scope="col">Cruz Azul <br> America</th>
-        <th scope="col">Cruz Azul <br> America</th>
-        <th scope="col">Cruz Azul <br> America</th>
-        <th scope="col">Cruz Azul <br> America</th>
-        <th scope="col">Cruz Azul <br> America</th>
-        <th scope="col">Cruz Azul <br> America</th>
-        <th scope="col">Cruz Azul <br> America</th>
-        <th scope="col">Cruz Azul <br> America</th>
+        @foreach($partidos as $partido)
+
+        <th scope="col">{{ $partido->local}} <br> {{ $partido->visitante}} </th>
+        @endforeach
+
         <th scope="col">Puntos</th>
       </tr>
     </thead> <!-- End Table header -->

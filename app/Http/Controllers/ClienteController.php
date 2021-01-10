@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use App\Models\Quinela;
+use App\Models\Partido;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
@@ -26,9 +27,10 @@ class ClienteController extends Controller
       ->leftJoin('cliente_puntos', 'cliente_puntos.cliente_id', '=', 'clientes.id')
       ->select('clientes.*', 'quinelas.*', 'cliente_puntos.puntos')
       ->paginate(2);*/
+      $partidos = Partido::all();
       $clientes = Cliente::with('todasLasQuinelas')->paginate(2);
       
-      return view('pages.lista', compact('clientes'));
+      return view('pages.lista', compact('clientes'), compact('partidos'));
       //->with('i', (request()->input('page', 1) - 1) * 3);
     }
 

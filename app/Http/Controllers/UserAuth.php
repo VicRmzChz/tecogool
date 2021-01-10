@@ -29,11 +29,11 @@ class UserAuth extends Controller
     }
 
     
-    public function dashboard()
+    public function board()
     {
       if(session()->has('username')) 
       {
-        return view('pages/dashboard');
+        return view('pages/board');
       }
       else
       {

@@ -13,7 +13,7 @@ Route::get('/', function () {
 Route::resource('/lista', ClienteController::class)->only(['index', 'show']);
 
 Route::post('user', [UserAuth::class, 'userLogin']);
-Route::get('dashboard', [UserAuth::class, 'dashboard']);
+Route::get('dashboard', [UserAuth::class, 'board']);
 Route::get('login', [UserAuth::class, 'userIsLogin']);
 
 

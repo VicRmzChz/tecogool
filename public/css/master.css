@@ -7,7 +7,7 @@
     text-transform: uppercase;
 }
 
-.navbar-brand span {
+.navbar-brand span, .goolcoler {
     color: #ef233c;
 }
 
@@ -64,3 +64,4 @@
         font-size: 3.5em;
     }
 }
+1

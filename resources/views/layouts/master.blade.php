@@ -16,43 +16,48 @@
 
 <body>
   <!-- Navbar -------------------------------------------->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <!-- Logo ------------------------------------------>
-      <a class="navbar-brand" href="/">Teco<span>Gool<span></i></a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  @if ( $__env->yieldContent('title') != 'Lista')
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top bg-transparent" />
+  @else
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" />
+  @endif
+  <div class="container">
+    <!-- Logo ------------------------------------------>
+    <a class="navbar-brand" href="/">Teco<span>Gool<span></i></a>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/lista">Lista</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav mr">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-          @if(session('username'))
-          <li><a class="nav-link" href="/dashboard">Dashboard <i class="fa fa-tachometer"></i></a></li>
-          <li><a class="nav-link" href="/logout">Logout <i class="fa fa-user"></i></a></li>
-          @else
-          <li><a class="nav-link" href="#">Sign Up <i class="fa fa-user-plus"></i></a></li>
-          <li><a class="nav-link" href="/login">Login <i class="fa fa-user"></i></a></li>
-          @endif
-        </ul>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/lista">Lista</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav mr">
+
+        @if(session('username'))
+        <li><a class="nav-link" href="/dashboard">Dashboard <i class="fa fa-tachometer"></i></a></li>
+        <li><a class="nav-link" href="/logout">Logout <i class="fa fa-user"></i></a></li>
+        @else
+        <li><a class="nav-link" href="#">Sign Up <i class="fa fa-user-plus"></i></a></li>
+        <li><a class="nav-link" href="/login">Login <i class="fa fa-user"></i></a></li>
+        @endif
+      </ul>
     </div>
+  </div>
 
   </nav>
   <!-- End Navbar -->
