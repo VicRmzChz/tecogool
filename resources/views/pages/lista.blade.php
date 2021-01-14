@@ -30,6 +30,8 @@
         <th scope="col">{{ $partido->local}} <br> {{ $partido->visitante}} </th>
         @endforeach
 
+
+
         <th scope="col">Puntos</th>
       </tr>
     </thead> <!-- End Table header -->

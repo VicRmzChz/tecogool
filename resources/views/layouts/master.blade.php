@@ -17,7 +17,7 @@
 <body>
   <!-- Navbar -------------------------------------------->
 
-  @if ( $__env->yieldContent('title') != 'Lista')
+  @if ( $__env->yieldContent('title') != 'Dashboard' )
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top bg-transparent" />
   @else
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" />

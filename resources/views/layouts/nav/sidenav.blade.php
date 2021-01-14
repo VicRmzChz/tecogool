@@ -1,5 +1,6 @@
+@extends('layouts.master')
 <link href="{{ asset('../css/dashboardStyle.css') }}" rel="stylesheet" />
-
+@section('content')
 <div class="nav-side-menu">
   <div class="brand">Hello {{ session('username')}}</div>
   <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
@@ -49,7 +50,7 @@
         </a>
       </li>
       <li>
-        <a href="/pages/quinela">
+        <a href="/quinela">
           <i class="fa fa-user fa-lg"></i> Quinela
         </a>
       </li>
@@ -66,3 +67,4 @@
   </div>
 </div>
 @yield('content')
+@endsection

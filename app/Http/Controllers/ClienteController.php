@@ -20,18 +20,13 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
-      /*$clientes = \DB::table('clientes')
-      ->leftJoin('quinelas', 'quinelas.cliente_id', '=', 'clientes.id')
-      ->leftJoin('cliente_puntos', 'cliente_puntos.cliente_id', '=', 'clientes.id')
-      ->select('clientes.*', 'quinelas.*', 'cliente_puntos.puntos')
-      ->paginate(2);*/
-      $partidos = Partido::all();
+      $partidos = Partido::all(); 
       $clientes = Cliente::with('todasLasQuinelas')->paginate(2);
-      
+  
       return view('pages.lista', compact('clientes'), compact('partidos'));
-      //->with('i', (request()->input('page', 1) - 1) * 3);
     }
 
     /**
@@ -68,14 +63,14 @@ class ClienteController extends Controller
         'buscarNombre' => 'required|max:255',
       ]);
 
-
+      $partidos = Partido::all();
       $clientes = Cliente::with('todasLasQuinelas')
         ->where('primer_nombre', 'LIKE', '%' . $req->buscarNombre . '%')
         ->orWhere('segundo_nombre', 'LIKE', '%'. $req->buscarNombre . '%')
         ->orWhere('apellido_paterno', 'LIKE', '%'. $req->buscarNombre . '%')
         ->orWhere('apellido_materno', 'LIKE', '%'. $req->buscarNombre . '%')
         ->paginate(1);
-        return view('/pages.lista', compact('clientes'));
+        return view('/pages.lista', compact('clientes'), compact('partidos'));
       
       
       /*return view('pages.lista', compact('clientes'))

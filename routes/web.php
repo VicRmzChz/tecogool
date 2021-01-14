@@ -10,6 +10,10 @@ Route::get('/', function () {
     return view('pages/home');
 });
 
+Route::get('/quinela', function () {
+  return view('pages/quinela');
+});
+
 Route::resource('/lista', ClienteController::class)->only(['index', 'show']);
 
 Route::post('user', [UserAuth::class, 'userLogin']);
