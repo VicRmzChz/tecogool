@@ -1,3 +1,5 @@
+@extends('layouts.master')
+@section('title', 'Dashboard')
 <link href="{{ asset('../css/dashboardStyle.css') }}" rel="stylesheet" />
 
 <div class="nav-side-menu">
@@ -10,6 +12,11 @@
       <li>
         <a href="#">
           <i class="fa fa-dashboard fa-lg"></i> Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="/quinela">
+          <i class="fa fa-user fa-lg"></i> Quinela
         </a>
       </li>
 
@@ -48,11 +55,7 @@
           <i class="fa fa-user fa-lg"></i> Profile
         </a>
       </li>
-      <li>
-        <a href="/pages/quinela">
-          <i class="fa fa-user fa-lg"></i> Quinela
-        </a>
-      </li>
+
 
       <li data-toggle="collapse" data-target="#new" class="collapsed">
         <a href="#"><i class="fa fa-car fa-lg"></i> Service <span class="arrow"></span></a>

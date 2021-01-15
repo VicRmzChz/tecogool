@@ -1,0 +1,13 @@
+.wrapper {
+    background-color: #343a40;
+    color: #f0efeb;
+}
+
+.form-wrapper {
+    padding: 20px;
+    width: 100%;
+    margin: 0px auto;
+    background-color: #495057;
+    border-radius: 10px;
+    box-shadow: 1px 2px 20px 3px black;
+}

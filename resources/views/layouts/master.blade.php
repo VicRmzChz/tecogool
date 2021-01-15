@@ -12,12 +12,16 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link href="{{ asset('../css/master.css') }}" rel="stylesheet" />
+
+
 </head>
 
 <body>
   <!-- Navbar -------------------------------------------->
-
-  @if ( $__env->yieldContent('title') != 'Dashboard' )
+  @php
+  $titulo = $__env->yieldContent('title')
+  @endphp
+  @if ( $titulo != 'Dashboard' && $titulo != 'Lista')
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top bg-transparent" />
   @else
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" />
